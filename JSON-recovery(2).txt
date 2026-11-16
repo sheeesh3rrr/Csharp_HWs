@@ -1,0 +1,26 @@
+
+а) Класс на C#
+
+public class Game
+{
+    public string Title { get; set; } = string.Empty;
+    public int Year { get; set; }
+    public double Rating { get; set; } 
+    public string[] Genres { get; set; } = Array.Empty<string>(); 
+    public bool IsMultiplayer { get; set; }
+}
+
+б) 
+
+Причина:
+По умолчанию System.Text.Json чувствителен к регистру при сопоставлении имён ключей JSON со свойствами класса. Свойство Title не находит пару в JSON и остаётся со значением по умолчанию (null).
+
+Решение через JsonSerializerOptions:
+Нужно включить свойство PropertyNameCaseInsensitive = true, которое разрешает игнорировать регистр букв при десериализации
+
+в) 
+
+-Является ли строка валидным JSON?
+Да
+-В какой тип C# её можно десериализовать?
+Так как в валидном массиве [1, "hello", true, null] лежат элементы разных типов (int, string, bool, null), его нельзя десериализовать в типизированный массив. Подойдут универсальные типы, например object[]	
