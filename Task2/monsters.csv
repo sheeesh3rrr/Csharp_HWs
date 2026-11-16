@@ -1,0 +1,6 @@
+Name;Health;Damage;Type
+Goblin;50;10;Melee
+Dragon;500;80;Flying
+Skeleton;30;15;Melee
+Ghost;40;25;Magic
+Archer;60;35;Ranged
