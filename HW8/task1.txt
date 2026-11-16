@@ -1,0 +1,10 @@
+A) Name - да, публичное св-во
+   Score - да, публичное св-во
+   secretCode - нет, приватное поле
+   IsAlive - нет, это поле, а не св-во
+
+Б) public int SecretCode => secretCode
+
+В) 1) public bool IsAlive {get; set; }
+   2)[JsonInclude]
+     public bool IsAlive;
