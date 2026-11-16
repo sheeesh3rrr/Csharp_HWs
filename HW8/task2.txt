@@ -1,0 +1,15 @@
+А) public class Game
+{
+    public string Title { get; set; }
+    public int Year { get; set; }
+    public float Rating { get; set; }
+    public string[] Genres { get; set; }
+    public bool IsMultiplayer { get; set; }
+}
+
+Б) var options = new JsonSerializerOptions
+{
+    PropertyNameCaseInsensitive = true
+};
+
+В) Да, в object[]
